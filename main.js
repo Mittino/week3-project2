@@ -22,18 +22,62 @@ ADVANCED TRACK: 10-13
 
 // 1. Without using Math.min(), write a function called minimum() that takes two numbers
 //    and outputs the smaller number.
+console.log('Question 1');
+function minumum(x,y){
+  if (x>y){
+    output = y
+  } else {output = x;
+  } return output;
+} console.log(minumum(7,7));
+
 
 // 2. Create a new function called minimum3() to find the smallest of three numbers.
+console.log('Question 2');
+function minimum3(x,y,z){
+  var numberArray=[];
+  var smallestNumber=[];
+  numberArray.push(x,y,z);
+  numberArray.sort();
+  smallestNumber = numberArray[0];
+  return smallestNumber;
+}
+console.log(minimum3(5,6,4));
 
 // 3. Declare a function called sum() that takes an array of numbers as an argument adds them together.
 //    i.e. sum([1, 2, 3, 4]) should return 10.
+console.log('Question 3');
+var numberArray = [1,2,3,4,5];
+
+var summedArray = numberArray.reduce(function(previous,current){
+  return previous + current;
+});
+console.log(summedArray);
 
 // 4. Declare a function called multiply() that takes an array of numbers and multiplies them together.
 //    i.e. multiply([1, 2, 3, 4]) should return 24.
+console.log('Question 4');
+var inputArray = [3,3,3];
+
+  var total = inputArray.reduce(function(prev,curr){
+    return prev * curr;
+  });
+console.log(total);
 
 // 5. Write a function called filterSixPlus() that takes the following array and removes words
 //    that are less than six characters.
 var words = ["window", "table", "cup", "knife", "barstool", "glass", "charger", "outlet"];
+console.log('Question 5');
+
+function filterSixPlus(words){
+  var sixCharArray = [];
+  for (i=0; i<words.length; i++){
+    if (words[i].length >= 6){
+      sixCharArray.push(words[i]);
+    }
+  }
+  return sixCharArray;
+}
+console.log(filterSixPlus(words));
 
 // 6. Use a function to ask a user for a temperature in Celsius and converts it to Fahrenheit.
 //    HINT: You may need to use parseFloat to convert the user's string input to a float.

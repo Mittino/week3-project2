@@ -82,13 +82,75 @@ console.log(filterSixPlus(words));
 // 6. Use a function to ask a user for a temperature in Celsius and converts it to Fahrenheit.
 //    HINT: You may need to use parseFloat to convert the user's string input to a float.
 
+console.log('Question 6 & 7');
+
+var celsiusInput = window.prompt('Enter in a temperature in you want to convert', 'Enter Celsius temp here...');
+var inputDirection = window.prompt('Do you want to convert from Celcius or farenheit? If you\'re converting from Celcius enter \"C\", if converting from Farenheit enter \"F\".', "Enter C or F here...")
+
+function conversion(input, direction){
+  var temperature;
+  var output;
+  var input = parseFloat(input);
+
+  if (direction.toLowerCase() === 'c'){
+    temperature = (input * 1.8) + 32;
+    output = temperature + ' degrees Farenheit';
+  } else if (direction.toLowerCase() === 'f'){
+    temperature = (input - 32) * (5/9);
+    output = temperature + ' degrees Celcius';
+  } else {
+    window.alert('Invalid entry - try again. Please enter C or F.');
+  }
+
+  return output;
+}
+
+console.log(conversion(celsiusInput, inputDirection));
+
 // 7. Adding to the code in #6, prompt the user a second time to determine whether they'd like to convert from Fahrenheit to Celsius
 //    or from Celsius to Fahrenheit. To keep it simple, instruct them to use "F to C" or "C to F".
 //    Alert them with an error if they do not follow the rules.
 
+
+
+
+
+
 // 8. Write a function countBs() that takes a string as its only argument and returns
 //    a number that indicates how many uppercase “B” characters are in the string.
 //    HINT: Google charAt()
+console.log('Question 8');
+
+function countBs(input){
+  var count = 0;
+
+  for (i=0; i<input.length; i++){
+    if (input.charAt(i) === 'B'){
+      count++;
+      console.log(input.charAt(i));
+    }
+  }
+  return count;
+}
+
+var string = "Baxter B is a boy little Boy puppy boy Baxter";
+console.log(countBs(string));
+
+console.log('Question 8 version 2');
+
+function countBs2(input){
+  var count = 0;
+  var split = input.split('');
+
+  for (i=0; i<split.length; i++){
+    if (split[i] === 'B'){
+      count++;
+      console.log(input.charAt(i));
+    }
+  }
+  return count;
+}
+console.log(countBs2(string));
 
 // 9. http://games.usvsth3m.com/javascript-under-pressure/
 //     Have fun with these! Get as far as you can and record your progress and time. We'll try this again in a few weeks!
